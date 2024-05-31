@@ -1,12 +1,12 @@
 // const tinderUser = new Object(); // this is singleton object
 
-const tinderUser = {};
+// const tinderUser = {};
 
-//another way to add the keys into the object.
+// //another way to add the keys into the object.
 
-tinderUser.id = "123abc"; //this is we giving an unique id to the user in the object.
-tinderUser.name = "Sammy"; //this is we giving a name to the user in the object.
-tinderUser.isLoggedin = false; //either the user is logged in or not.
+// tinderUser.id = "123abc"; //this is we giving an unique id to the user in the object.
+// tinderUser.name = "Sammy"; //this is we giving a name to the user in the object.
+// tinderUser.isLoggedin = false; //either the user is logged in or not.
 
 // // console.log(tinderUser);
 
@@ -33,9 +33,9 @@ tinderUser.isLoggedin = false; //either the user is logged in or not.
 
 /// combinig objects.
 
-const newObj1 = { 1: "a", 2: "b" };
+// const newObj1 = { 1: "a", 2: "b" };
 
-const newObj2 = { 3: "a", 4: "b" };
+// const newObj2 = { 3: "a", 4: "b" };
 
 // const obj3 = { newObj1, newObj2 }; //we can't do this because this will add the object into the parent object which creates a nested object.
 // console.log(obj3);
@@ -85,15 +85,15 @@ const newObj2 = { 3: "a", 4: "b" };
 
 ////////////////////////////////// DESTRUCTURING OF AN OBJECT.
 
-const course = {
-  name: "js in hindi",
-  price: "999",
-  teacher: "hitesh",
-};
+// const course = {
+//   name: "js in hindi",
+//   price: "999",
+//   teacher: "hitesh",
+// };
 
 //another way to fetch the keys and values from the object.
 // const { teacher } = course;
 // console.log(teacher); // this is as same as the (course.teacher)
 
-const { teacher: sir } = course; //this is destructuring the object
-console.log(sir);
+// const { teacher: sir } = course; //this is destructuring the object
+// console.log(sir);
