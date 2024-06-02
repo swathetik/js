@@ -24,10 +24,30 @@
 
 /////////////// another way of declaring function
 
-const chai = () => {
-  //here this has to take the value of the variable it is put in.
-  let username = "shwetrana";
-  console.log(this.username);
-  console.log(this);
-};
-chai();
+// const chai = () => {
+//   //here this has to take the value of the variable it is put in.
+//   let username = "shwetrana";
+//   console.log(this.username);
+//   console.log(this);
+// };
+// chai();
+
+// syntax for the arrow function
+
+// const addTwo = (num1, num2) => {
+//   return num1 + num2;
+// };
+// console.log(addTwo(3, 4));
+
+/// what do you mean by implicit return?  implicit return is something where we don't use paranthisis{} and return the function in the same line of declaration.
+
+// const addTwo = (num1, num2) => num1 + num2; another way to write the arrow function
+// const addTwo = (num1, num2) => num1 + num2;
+
+// returning object by arrow function
+
+// const addTwo = (num1, num2) => ({ username: "shwet" });
+// console.log(addTwo(3, 4));
+
+// const myArray = [1, 2, 3, 4, 5];
+// myArray.forEach(()=>{}); //this is arrow function in array in foreach loop
