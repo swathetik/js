@@ -1,0 +1,46 @@
+When we write the code in js, js gives global execution context and then global EC refer krdiya jaata h "this" variable ko.
+
+Global Execution Context browser ke liye alg hota h or node.js ka environment alg hota h.
+In browser this object gives the value of window object.
+
+Javascript is a single threaded language and the language works on threads.
+
+there are two types of execution context
+1. global execution Context
+2. functional execution context.
+3. eval execution context. // this only matters in mongodb & this is not that important 
+
+
+HOW JS RUNS in two phases 
+1: Memory Creation Phase also known as creation phase.
+    in this phase we only create the memory for the varibles and the operations we have done in the memory phase.
+2: execution phase.
+    in this phase every task is done, every operation.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++ EXAMPLES +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+let val1 = 10;
+let val2 = 5;
+function addnum(num1, num2) {
+  let total = num1 + num2;
+  return total;
+}
+let result1 = addnum(val1, val2);
+let result2 = addnum(10, 2);
+
+console.log(result1);
+console.log(result2);
+
+haan toh jb hum kisi code me function bnate h like the above code toh sbse pehle global execution phase bnta h uske baad memory allocate hoti h jisme sbhi variables ki value ko undefined daala hota h 
+uske baad hum execution context pe jaate h jnha values assign hoti h like val1 = 10, val2 = 5
+ab jo addNum ka function bna h uske liye alg se 1st-3steps firse repeat honge (lekin ye temporary rehta hai permanent nhi hota hai)
+function ke phases me pehle memory allocate hogi sbhi ko undefined and 2nd me value assign hogi uske baad operations honge
+jese hi execution context ka kaam khtm ho jaata h vo vese hi delete b ho jata h.
+
+
+///////////////////////// CALL STACK /////////////////////////
+
+call stacks works on the principle of LIFO ( Last In First Out ) the last thing added to the stack will be the first to get out.
+once the task of any function or method is initiated, it'll enter the callstack and when the task will be over it;ll come out of it. 
