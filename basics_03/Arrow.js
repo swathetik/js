@@ -39,10 +39,12 @@
 // };
 // console.log(addTwo(3, 4));
 
-/// what do you mean by implicit return?  implicit return is something where we don't use paranthisis{} and return the function in the same line of declaration.
+/// what do you mean by implicit return?
+// implicit return is something where we don't use paranthisis{} and return the function in the same line of declaration.
 
-// const addTwo = (num1, num2) => num1 + num2; another way to write the arrow function
 // const addTwo = (num1, num2) => num1 + num2;
+// another way to write the arrow function
+// const addTwo = (num1, num2) => (num1 + num2);
 
 // returning object by arrow function
 
