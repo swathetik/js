@@ -4,16 +4,32 @@
     <meta charset="UTF-8" />
 
     <title>DOM Learning</title>
+    <style>
+      .bg-black {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
   </head>
-  <body>
-    <div class="bg-black">
-      <h1 class="heading">DOM LEARNING</h1>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">
+        DOM LEARNING <span style="display: none">test text</span>
+      </h1>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam beatae rem
-        sunt recusandae nesciunt rerum, accusamus repudiandae ea dolorem harum
-        perspiciatis veritatis qui sapiente dignissimos laborum magnam
-        voluptatum enim. Pariatur!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta tempore
+        dignissimos, similique, voluptatem impedit incidunt officiis praesentium
+        cumque fugiat amet, adipisci delectus? Obcaecati sunt ea soluta, ab
+        inventore nesciunt sit.
       </p>
+      <!-- to learn querySelector we have made this unordered list.
+       by default this querySelector only picks the 1st element -->
+      <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+      </ul>
     </div>
   </body>
 </html>
