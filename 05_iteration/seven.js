@@ -27,4 +27,15 @@ const newNum = myNum
   .map((num) => num + 1) // the method will act on the previously formed array and pass it on to the next method
   .filter((num) => num >= 40); // here it'll filter according to the given condition and return it in the new array.
 
-console.log(newNum);
+// console.log(newNum);
+
+function a() {
+  var x = 7;
+  function b() {
+    console.log(x);
+  }
+  return b;
+}
+var y = a();
+console.log(y);
+y();

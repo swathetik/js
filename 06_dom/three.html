@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHAI OR CODE | DOM</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <ul class="language">
+      <li>JavaScript</li>
+    </ul>
+  </body>
+  <script>
+    function addLanguage(addLan) {
+      const li = document.createElement("li");
+      li.innerHTML = `${addLan}`;
+      document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("Python");
+    addLanguage("TypeScript");
+
+    function addoptilanguage(addOpti) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(addOpti));
+      document.querySelector(".language").appendChild(li);
+    }
+    addoptilanguage("goLang");
+
+    //EDIT the data in the given document using createElement and textContent
+
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML("MOJO");
+    const newLi = document.createElement("li");
+    newLi.textContent = "Mojo";
+    secondLang.replaceWith(newLi);
+
+    // Edit the data using innerHTML
+    const fristLang = document.querySelector("li:first-child");
+    fristLang.outerHTML = "<li>TypeScript</li>";
+
+    // remove anything from the list
+
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+  </script>
+</html>

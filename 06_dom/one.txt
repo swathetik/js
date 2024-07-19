@@ -1,0 +1,24 @@
+basic things about the DOM 
+
+1.  getElementbyId() ---> this is used to get the element by it's Id and manipulate it's properties accordingly
+
+2. querySelector() ---> this only selects the 1st element of and allows to manipulate it's properties.
+
+3. querySelectorAll() ---> this selects all the elements and then return the NodeList.
+
+4. NodeList ----> it looks like an array but not an Array. it doesn't have all the properties of arrays. so we can't manipulate it like we can manipulate an Array.  Only use forEach on this.
+
+5. getElementbyClassName() ---> same as the {getElementbyId} but here instead of Id we use className & this returns the HTMLCollection.
+
+6. HTMLCollection[] ----> this is completly different from the array and the NodeList. 
+
+------------------- IMPORTANT -----------------------
+
+if we have to use anything on the HTMLCollection and NodeList we'll have to convert them into Arrays.
+
+Question:- How to convert HTMLCollection and NodeList into Arrays?
+Answer:- to convert HTMLCollection and NodeList to Array we have to use the syntax as 
+
+Array.from(NodeList/HTMLCollection);
+
+
