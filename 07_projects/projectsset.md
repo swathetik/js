@@ -1,12 +1,12 @@
 # Projects Related to DOM
 
-## project link
+## Project Link
 
 [Click Here](https://stackblitz.com/edit/dom-project-chaiaurcode-oa6cpr?file=index.html)
 
 # Solution Codes
 
-# Project 1
+# Project 1 :- Color Changer
 
 ```javascript
 const buttons = document.querySelectorAll(".button");
@@ -40,7 +40,7 @@ buttons.forEach(function (button) {
 });
 ```
 
-# Project 2
+# Project 2 :- BMI Calculator
 
 ```javascript
 const form = document.querySelector("form");
@@ -76,3 +76,126 @@ form.addEventListener("submit", function (e) {
   }
 });
 ```
+
+# Project 3 :- Display Time
+
+```javascript
+const clock = document.getElementById("clock");
+// const clock = document.querySelector("#clock"); they both will give the same output.
+
+// this setIntervel method controls the events of the javascript
+// time always go in miliseconds so we have to write it in miliseconds, here 1000 means 1sec
+// setInterval always have 2 parameters, so in first we give the function we want it to perform and 2nd we give it time interval of performing that same function.
+
+setInterval(function () {
+  let date = new Date();
+  // console.log(date.toLocaleTimeString());
+  // here we have manipulated the innerHTML of the project and updated it with the digital clock.
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+```
+
+# Project 4 :- Guess the Number
+
+```javascript
+let randomNumber = parseInt(Math.random() * 100 + 1);
+
+const submit = document.querySelector("#subt");
+const userInput = document.querySelector("#guessField");
+const guessSlot = document.querySelector(".guesses");
+const remaining = document.querySelector(".lastResult");
+const lowOrHi = document.querySelector(".lowOrHi");
+const startOver = document.querySelector(".resultParas");
+
+const p = document.createElement("p");
+
+let prevGuess = [];
+let numGuesses = 1;
+
+let playGame = true;
+
+//until here we have taken the code and prepared it for the further process or the logic
+
+if (playGame) {
+  submit.addEventListener("click", function (e) {
+    e.preventDefault();
+    const guess = parseInt(userInput.value);
+    validateGuess(guess);
+  });
+}
+
+function validateGuess(guess) {
+  //this will check if the guess is between 1 or 10
+  if (isNaN(guess)) {
+    alert("Please enter a valid number");
+  } else if (guess < 1) {
+    alert("Please enter a number bigger than 1");
+  } else if (guess > 100) {
+    alert("Please enter a number less than 100");
+  } else {
+    prevGuess.push(guess);
+    if (numGuesses === 11) {
+      displayGuess(guess);
+      displayMessage(`Game user. Random number was ${randomNumber}`);
+      endGame();
+    } else {
+      displayGuess(guess);
+      checkGuess(guess);
+    }
+  }
+}
+
+function checkGuess(guess) {
+  // this prints the message after validation of the guess
+  if (guess === randomNumber) {
+    displayMessage(`You guessed it right`);
+    endGame();
+  } else if (guess < randomNumber) {
+    displayMessage(`Number is too low`);
+  } else if (guess > randomNumber) {
+    displayMessage(`Number is too high`);
+  }
+}
+
+function displayGuess(guess) {
+  userInput.value = "";
+  guessSlot.innerHTML += `${guess}, `;
+  numGuesses++;
+  remaining.innerHTML = `${11 - numGuesses}`;
+}
+
+function displayMessage(message) {
+  // this will interact with the DOM and gives the final message.
+
+  lowOrHi.innerHTML = `<h2>${message}</h2>`;
+}
+
+function endGame() {
+  //
+  userInput.value = "";
+  userInput.setAttribute("disabled", "");
+  p.classList.add("button");
+  p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+  startOver.appendChild(p);
+  playGame = false;
+  newGame();
+}
+
+function newGame() {
+  //
+  const newGameButton = document.querySelector("#newGame");
+  newGameButton.addEventListener("click", function (e) {
+    randomNumber = parseInt(Math.random() * 100 + 1);
+    prevGuess = [];
+    numGuesses = 1;
+    guessSlot.innerHTML = "";
+    remaining.innerHTML = `${11 - numGuesses}`;
+    userInput.removeAttribute("disabled");
+    startOver.removeChild(p);
+
+    playGame = true;
+  });
+}
+```
+
+# Project 5 :-
