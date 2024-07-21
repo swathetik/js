@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>Chai or Code</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    // setTimeout is a function where it ttakes the given time and performs the given task after that timre period once.
+    setTimeout(function () {
+      console.log("hitesh");
+    }, 2000);
+
+    // other way to do the same thing is by making a variable and the adding that reference to the setTimeout function.
+    const sayShwet = function () {
+      console.log("Shwet");
+    };
+    setTimeout(sayShwet, 3000);
+
+    // changing the H1 tag by DOM.
+
+    const html = function () {
+      document.querySelector("h1").innerHTML = "best js in the history";
+    };
+
+    const changeMe = setTimeout(html, 5000);
+
+    // if we don't want to perform the task given in setTimeout we can just stop it by using clearTimeout. this removes the setTimeout from the stack.
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearTimeout(changeMe);
+      console.log("STOPPED");
+    });
+  </script>
+</html>
