@@ -198,4 +198,62 @@ function newGame() {
 }
 ```
 
-# Project 5 :-
+# Project 5 :- Keyboard
+
+```javascript
+const insert = document.getElementById("insert");
+window.addEventListener("keydown", (e) => {
+  insert.innerHTML = `
+  <div class = "color">
+  <table>
+  <tr>
+    <th>key </th>
+    <th>keycode</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key === " " ? "Space" : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+  </div>
+  
+  `;
+});
+```
+
+# Project 6 :- Color Changer
+
+```javascript
+// generate a random color
+
+const randomColor = function () {
+  const hex = "0123456789ABCDEF"; // this is the range of the hex code value (color values)
+  let color = "#";
+
+  for (i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)]; //16 because hex values go to 16
+  }
+  return color;
+};
+
+// console.log(randomColor());
+let intervalId;
+const startChangingColor = function () {
+  // we have done this to make the code more reliable and good.
+  // it checks whether if the value of intervalId is null or not if it is null, we change it with the setInterval().
+  if (!intervalId) {
+    intervalId = setInterval(changeBGcolor, 1000);
+  }
+  function changeBGcolor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+const stopChangingColor = function () {
+  clearInterval(intervalId); //this clears the interval and stops the proccess.
+  intervalId = null;
+};
+document.querySelector("#start").addEventListener("click", startChangingColor);
+document.querySelector("#stop").addEventListener("click", stopChangingColor);
+```
